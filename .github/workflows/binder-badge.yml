@@ -1,0 +1,15 @@
+name: binder-badge
+on:
+  pull_request_target:
+
+jobs:
+  badge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: manics/action-binderbadge@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
